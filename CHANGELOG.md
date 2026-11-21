@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1 (2026-11-21)
+
+- Mac downloads now open on macOS 12 and 13. The 1.1.0 Mac builds picked up a Qt that needs macOS 14, so release builds are pinned to PySide6 6.9.3
+
 ## 1.1.0 (2026-11-21)
 
 - Desktop app for macOS and Windows (`tokenwatt app`, or the downloadable builds)

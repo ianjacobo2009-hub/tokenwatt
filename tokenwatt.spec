@@ -28,8 +28,8 @@ if sys.platform == "darwin":
         bundle_identifier="com.ianamado.tokenwatt",
         info_plist={
             "CFBundleDisplayName": "tokenwatt",
-            "CFBundleShortVersionString": "1.1.0",
-            "CFBundleVersion": "1.1.0",
+            "CFBundleShortVersionString": "1.1.1",
+            "CFBundleVersion": "1.1.1",
             "NSHighResolutionCapable": True,
             "LSMinimumSystemVersion": "12.0",
             "NSHumanReadableCopyright": "MIT license, Ian Amado",
