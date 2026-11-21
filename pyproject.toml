@@ -7,7 +7,7 @@ name = "tokenwatt"
 version = "1.1.0"
 description = "Correlate Claude token usage with CPU, RAM, GPU and power draw on your own computer."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = "MIT"
 authors = [{ name = "Ian Amado" }]
 keywords = ["claude", "tokens", "energy", "power", "benchmark", "monitoring"]

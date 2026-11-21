@@ -42,7 +42,7 @@ No Python needed. macOS 12 or newer, Windows 10 or newer.
 
 ## Command line
 
-The same engine is also a command-line tool, handy for servers or for leaving it running over SSH. It needs Python 3.9 or newer.
+The same engine is also a command-line tool, handy for servers or for leaving it running over SSH. It needs Python 3.10 or newer.
 
 ```bash
 pip install git+https://github.com/ianjacobo2009-hub/tokenwatt
