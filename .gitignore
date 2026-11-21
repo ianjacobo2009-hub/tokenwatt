@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+*.db
+*.db-wal
+*.db-shm
+tokenwatt-report.html
+tokenwatt-windows.csv
+.DS_Store
+assets/icon.iconset/
+*.spec.bak

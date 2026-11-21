@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tokenwatt"
+version = "1.1.0"
+description = "Correlate Claude token usage with CPU, RAM, GPU and power draw on your own computer."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{ name = "Ian Amado" }]
+keywords = ["claude", "tokens", "energy", "power", "benchmark", "monitoring"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Environment :: Console",
+    "Topic :: System :: Monitoring",
+]
+dependencies = ["psutil>=5.9"]
+
+[project.optional-dependencies]
+app = ["PySide6>=6.5"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+tokenwatt = "tokenwatt.cli:main"
+
+[project.gui-scripts]
+tokenwatt-app = "tokenwatt.gui.app:main"
+
+[project.urls]
+Homepage = "https://github.com/ianjacobo2009-hub/tokenwatt"
+Issues = "https://github.com/ianjacobo2009-hub/tokenwatt/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
