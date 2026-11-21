@@ -66,6 +66,15 @@ def test_real_sampler_produces_a_row(tmp_path):
     assert len(store.samples_between(con)) == 1
 
 
+def test_works_without_cpu_freq(tmp_path, monkeypatch):
+    # psutil has no cpu_freq on Apple Silicon Macs
+    monkeypatch.delattr(sampler.psutil, "cpu_freq", raising=False)
+    info = specs.collect()
+    assert info["cpu_max_mhz"] is None
+    row = sampler.Sampler(tdp=20, laptop=True).sample()
+    assert row["freq_mhz"] is None
+
+
 def test_cli_end_to_end(tmp_path, capsys):
     db = str(tmp_path / "e2e.db")
     logs = tmp_path / "logs" / "p"
