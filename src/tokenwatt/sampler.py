@@ -7,7 +7,7 @@ import time
 
 import psutil
 
-from tokenwatt.specs import run
+from tokenwatt.specs import cpu_freq, run
 
 SYSTEM = platform.system()
 
@@ -248,11 +248,8 @@ class Sampler:
             swap = psutil.swap_memory().percent
         except (OSError, RuntimeError):
             swap = None
-        try:
-            f = psutil.cpu_freq()
-            freq = round(f.current, 1) if f else None
-        except (OSError, NotImplementedError, FileNotFoundError):
-            freq = None
+        f = cpu_freq()
+        freq = round(f.current, 1) if f and f.current else None
         gpu_pct, gpu_w = self.gpu.read()
         watts, src, on_batt = self.power.read()
         if watts is not None and src == "rapl" and gpu_w is not None:

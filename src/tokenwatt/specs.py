@@ -121,9 +121,20 @@ def _num(s):
         return None
 
 
+def cpu_freq():
+    """psutil.cpu_freq, or None where it doesn't exist (Apple Silicon) or fails."""
+    fn = getattr(psutil, "cpu_freq", None)
+    if fn is None:
+        return None
+    try:
+        return fn()
+    except (OSError, NotImplementedError, RuntimeError):
+        return None
+
+
 def collect():
     name = cpu_name()
-    freq = psutil.cpu_freq()
+    freq = cpu_freq()
     mem = psutil.virtual_memory()
     battery = None
     try:
