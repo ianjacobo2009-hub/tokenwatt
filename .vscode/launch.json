@@ -1,0 +1,50 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "tokenwatt: desktop app",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "tokenwatt",
+      "args": [
+        "app"
+      ],
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "tokenwatt: record",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "tokenwatt",
+      "args": [
+        "record"
+      ],
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "tokenwatt: report + open",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "tokenwatt",
+      "args": [
+        "report",
+        "--open"
+      ],
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "-q"
+      ],
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "console": "integratedTerminal"
+    }
+  ]
+}
